@@ -29,24 +29,28 @@ const skillsData = [
 
 const workData = [
     {
+        avatar: "BRIN",
         date: "Okt 2025 — Sekarang",
-        title: "Software Engineering & Field Researcher",
+        title: "Geospatial Web Developer & Field Researcher",
         org: "National Research and Innovation Agency (BRIN)",
         desc: "Mengembangkan antarmuka front-end platform web DiVolca.Net menggunakan React, mengintegrasikan multi-source API vulkanologi untuk mendukung mitigasi bencana nasional."
     },
     {
+        avatar: "PTP",
         date: "Mar — Apr 2026",
         title: "Marine Geophysics Intern",
         org: "PT. Prihaditama Geosciences & Oceanography Consulting",
         desc: "Memproses data Sub-Bottom Profiler (SBP) dan Ground Penetrating Radar (GPR) menggunakan ReflexW; menyusun 2D utility alignment dan peta batas subsurface di AutoCAD sebagai deliverable engineering."
     },
     {
+        avatar: "KKP",
         date: "Sep 2024 — Des 2025",
-        title: "Research Assistant & Web Developer",
+        title: "Research Assistant & WEBGIS Developer",
         org: "ITB × Kementerian Kelautan dan Perikanan (KKP)",
         desc: "Membangun geoportal WebGIS interaktif dengan GeoDjango dan Leaflet.js, mengintegrasikan data metocean real-time (arus, gelombang, angin) dari CMEMS dan ECMWF untuk perencanaan spasial pesisir."
     },
     {
+        avatar: "PTB",
         date: "Jun 2024 — Agu 2025",
         title: "Web Developer & IoT Instrumentation Intern",
         org: "PT. Brajakara Teknologi Media",
@@ -56,36 +60,42 @@ const workData = [
 
 const orgData = [
     {
+        avatar: "HS",
         date: "Jun 2025 — Sekarang",
         title: "Founder & Community Lead",
         org: "Hidayahsubuh.id",
         desc: "Mendirikan dan memimpin komunitas kemanusiaan 130+ anggota; menjalankan 20+ program sosial termasuk Qurban, kunjungan panti asuhan, dan distribusi sembako."
     },
     {
+        avatar: "ITB",
         date: "Feb — Jul 2025",
         title: "Head Teaching Assistant — Numerical Methods",
         org: "Institut Teknologi Bandung (ITB)",
         desc: "Memimpin tim asisten praktikum satu semester; mengelola scheduling, timeline operasional, dan sistem grading terstandar untuk 6 modul komputasi inti."
     },
     {
+        avatar: "PITB",
         date: "Jul 2024 — Sekarang",
         title: "Core Protocol Officer",
         org: "Protokol ITB",
         desc: "Mengkoordinasi protokoler acara kampus dengan 15.000+ peserta per event (Wisuda, Studium Generale); menjadi liaison utama untuk VIP dan pimpinan universitas."
     },
     {
+        avatar: "CDT",
         date: "Des 2023 — Feb 2025",
         title: "Operational & Event Coordinator",
         org: "Character Development Training (CDT) ITB 2024",
         desc: "Memimpin 50 anggota panitia lapangan untuk program orientasi 5.000 mahasiswa; merancang rundown acara dan menjadi MC utama."
     },
     {
+        avatar: "OGG",
         date: "Des 2022 — Jun 2023",
         title: "Head of Human Resource (PMSDM)",
         org: "Olimpiade Geografi dan Geosains (OGG) FITB ITB",
         desc: "Memimpin siklus rekrutmen dan appraisal panitia serta kepala divisi dengan framework terstruktur di Notion dan Excel; menangani relasi personal dan resolusi konflik internal."
     },
     {
+        avatar: "FBM",
         date: "Okt 2022 — Apr 2024",
         title: "External Relations Staff",
         org: "Forum Bidikmisi ITB",
@@ -203,10 +213,13 @@ const renderTimeline = (containerId, data) => {
     const container = document.getElementById(containerId);
     container.innerHTML = data.map((item, i) => `
         <div class="timeline-item fade-in" style="transition-delay:${i * 0.08}s">
-            <div class="timeline-date">${item.date}</div>
-            <h3 class="timeline-title">${item.title}</h3>
-            <div class="timeline-org">${item.org}</div>
-            <p class="timeline-desc">${item.desc}</p>
+            <div class="timeline-avatar">${item.avatar}</div>
+            <div class="timeline-content">
+                <div class="timeline-date">${item.date}</div>
+                <h3 class="timeline-title">${item.title}</h3>
+                <div class="timeline-org">${item.org}</div>
+                <p class="timeline-desc">${item.desc}</p>
+            </div>
         </div>
     `).join('');
 };
