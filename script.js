@@ -79,11 +79,17 @@ const instrumentsData = [
 ];
 
 const partnersData = [
+    { name: "ITB", file: "itb" },
+    { name: "BRIN", file: "brin" },
+    { name: "KKP", file: "kkp" },
+    { name: "LPDP", file: "lpdp" },
     { name: "PT Brajakara", file: "brajakara" },
     { name: "PT Prihaditama", file: "prihaditama" },
-    { name: "ITB", file: "itb" },
-    { name: "KKP", file: "kkp" },
-    { name: "BRIN", file: "brin" }
+    { name: "Protokol ITB", file: "protokol-itb" },
+    { name: "Hidayahsubuh", file: "hidayahsubuh" },
+    { name: "ALC Indonesia", file: "alc" },
+    { name: "Sakola Kembara", file: "sakola-kembara" },
+    { name: "Rumah Amal Salman", file: "rumah-amal-salman" }
 ];
 
 const skillsData = [
