@@ -20,6 +20,26 @@
     --blue-tint: #eff6ff;
     --blue-dark: #1e3a8a;
 
+    --teal: #0891b2;
+    --teal-dark: #0e7490;
+    --teal-soft: #a5f3fc;
+    --teal-tint: #ecfeff;
+
+    --amber: #d97706;
+    --amber-dark: #b45309;
+    --amber-soft: #fde68a;
+    --amber-tint: #fffbeb;
+
+    --violet: #7c3aed;
+    --violet-dark: #6d28d9;
+    --violet-soft: #ddd6fe;
+    --violet-tint: #f5f3ff;
+
+    --rose: #db2777;
+    --rose-dark: #be185d;
+    --rose-soft: #fbcfe8;
+    --rose-tint: #fdf2f8;
+
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
     --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
@@ -491,16 +511,117 @@ h2 {
     background: var(--primary-tint); color: var(--primary);
     border: 1px solid var(--primary-soft);
 }
-.skill-card.skill-soft .skill-icon {
-    background: var(--blue-tint); color: var(--blue);
-    border-color: var(--blue-soft);
+
+/* Enhanced skill cards */
+.skill-card {
+    --accent: var(--primary);
+    --accent-dark: var(--primary-dark);
+    --accent-soft: var(--primary-soft);
+    --accent-tint: var(--primary-tint);
+    padding: 2rem 1.8rem 1.7rem;
+    overflow: hidden;
+    position: relative;
 }
-.skill-card.skill-soft:hover {
-    border-color: var(--blue-soft);
+.skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    z-index: 1;
 }
-.skill-card.skill-soft .tech-tag {
-    background: var(--primary-tint); color: var(--primary);
-    border-color: var(--primary-soft);
+.skill-card::after {
+    content: '';
+    position: absolute; top: -50%; right: -30%;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-tint) 0%, transparent 70%);
+    opacity: 0.7; pointer-events: none;
+    z-index: 0;
+}
+.skill-card > * { position: relative; z-index: 1; }
+.skill-card .skill-icon {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #ffffff;
+    font-size: 1.6rem;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    border: none;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-serif); font-weight: 700;
+}
+.skill-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 0.55rem;
+}
+.skill-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+.skill-card .tech-tag {
+    background: var(--accent-tint);
+    color: var(--accent);
+    border-color: var(--accent-soft);
+    font-size: 0.72rem;
+    padding: 0.32rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+.skill-card .tech-tag:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    border-color: var(--accent-soft);
+}
+
+/* Per-card accent colors */
+#skills-hard-container .skill-card:nth-child(1) {
+    --accent: var(--primary);
+    --accent-dark: var(--primary-dark);
+    --accent-soft: var(--primary-soft);
+    --accent-tint: var(--primary-tint);
+}
+#skills-hard-container .skill-card:nth-child(2) {
+    --accent: var(--blue);
+    --accent-dark: var(--blue-dark);
+    --accent-soft: var(--blue-soft);
+    --accent-tint: var(--blue-tint);
+}
+#skills-hard-container .skill-card:nth-child(3) {
+    --accent: var(--teal);
+    --accent-dark: var(--teal-dark);
+    --accent-soft: var(--teal-soft);
+    --accent-tint: var(--teal-tint);
+}
+#skills-hard-container .skill-card:nth-child(4) {
+    --accent: var(--amber);
+    --accent-dark: var(--amber-dark);
+    --accent-soft: var(--amber-soft);
+    --accent-tint: var(--amber-tint);
+}
+#skills-soft-container .skill-card:nth-child(1) {
+    --accent: var(--violet);
+    --accent-dark: var(--violet-dark);
+    --accent-soft: var(--violet-soft);
+    --accent-tint: var(--violet-tint);
+}
+#skills-soft-container .skill-card:nth-child(2) {
+    --accent: var(--rose);
+    --accent-dark: var(--rose-dark);
+    --accent-soft: var(--rose-soft);
+    --accent-tint: var(--rose-tint);
 }
 .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 700; }
 .card p { flex-grow: 1; font-size: 0.92rem; color: var(--text-secondary); }

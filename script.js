@@ -74,8 +74,7 @@ const instrumentsData = [
     { name: "Tide Gauge", desc: "Perekam pasang surut", file: "tide-gauge" },
     { name: "SBES", desc: "Single-Beam Echosounder", file: "sbes" },
     { name: "Nivo", desc: "Waterpass survei elevasi", file: "nivo" },
-    { name: "RTK", desc: "Real-Time Kinematic positioning", file: "rtk" },
-    { name: "GNSS", desc: "Global Navigation Satellite System", file: "gnss" }
+    { name: "GNSS", desc: "Global Navigation Satellite System (RTK)", file: "gnss" }
 ];
 
 const partnersData = [
