@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
     <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b2545"/>
-      <stop offset="100%" stop-color="#2a4d69"/>
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#g2)"/>
-  <g fill="none" stroke="#5bc0be" stroke-width="1.5" opacity="0.5">
-    <rect x="300" y="180" width="200" height="140" rx="8"/>
-    <line x1="400" y1="180" x2="400" y2="120"/>
-    <circle cx="400" cy="110" r="10"/>
+  <rect x="150" y="120" width="500" height="280" rx="12" fill="#fff" stroke="#1e40af" stroke-width="2" opacity="0.9"/>
+  <rect x="180" y="150" width="440" height="30" rx="4" fill="#1e40af" opacity="0.1"/>
+  <g fill="#ea580c" opacity="0.7">
+    <rect x="180" y="200" width="90" height="90" rx="8"/>
+    <rect x="290" y="200" width="90" height="90" rx="8" fill="#1e40af" opacity="0.5"/>
+    <rect x="400" y="200" width="90" height="90" rx="8"/>
+    <rect x="510" y="200" width="90" height="90" rx="8" fill="#1e40af" opacity="0.5"/>
   </g>
-  <g fill="#5bc0be" opacity="0.7">
-    <rect x="320" y="200" width="30" height="30" rx="4"/>
-    <rect x="360" y="200" width="30" height="30" rx="4"/>
-    <rect x="400" y="200" width="30" height="30" rx="4"/>
-  </g>
-  <text x="400" y="380" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">VARUNA WATCH Sensor</text>
-  <text x="400" y="410" font-family="Segoe UI, sans-serif" font-size="14" fill="#b8c7d6" text-anchor="middle">Ganti file: images/project-2.jpg</text>
+  <text x="400" y="345" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#0f172a" text-anchor="middle">KKP Coastal Geoportal</text>
+  <text x="400" y="370" font-family="system-ui, sans-serif" font-size="12" fill="#475569" text-anchor="middle">Ganti file: images/project-2.jpg</text>
 </svg>
