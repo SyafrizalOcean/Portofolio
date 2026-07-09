@@ -15,7 +15,6 @@ Upload foto tiap alat dengan nama file yang persis sesuai tabel. Format JPG atau
 | Tide Gauge       | `tide-gauge.jpg`      |
 | SBES             | `sbes.jpg`            |
 | Nivo             | `nivo.jpg`            |
-| RTK              | `rtk.jpg`             |
 | GNSS             | `gnss.jpg`            |
 
 **Ukuran ideal**: rasio 4:3 (misal 800 × 600 px). Bisa foto kamu saat operasikan alatnya biar lebih personal.
