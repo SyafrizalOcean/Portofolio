@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="55%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eff6ff"/>
+    </linearGradient>
+    <linearGradient id="oglogo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+
+  <!-- Floating dots decoration -->
+  <g opacity="0.35">
+    <circle cx="120" cy="100" r="6" fill="#ea580c"/>
+    <circle cx="180" cy="180" r="4" fill="#1e40af"/>
+    <circle cx="1100" cy="120" r="8" fill="#0891b2"/>
+    <circle cx="1050" cy="60" r="5" fill="#ea580c"/>
+    <circle cx="70" cy="500" r="6" fill="#1e40af"/>
+    <circle cx="1130" cy="480" r="7" fill="#ea580c"/>
+  </g>
+
+  <!-- Left content -->
+  <text x="80" y="200" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#0f172a" letter-spacing="-2">Syafrizal</text>
+  <text x="80" y="285" font-family="Georgia, serif" font-size="72" font-weight="700" font-style="italic" fill="#ea580c" letter-spacing="-2">Hidayat</text>
+
+  <!-- Divider -->
+  <rect x="80" y="325" width="120" height="4" rx="2" fill="#ea580c"/>
+
+  <!-- Tagline -->
+  <text x="80" y="385" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#1e40af">Software · Oceanographer · Instrumentation</text>
+
+  <!-- Description -->
+  <text x="80" y="435" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" fill="#475569">Fresh graduate ITB — Cum Laude · GPA 3.74/4.00</text>
+  <text x="80" y="470" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" fill="#475569">2× HAKI Holder · WebGIS · IoT Marine Instrumentation</text>
+
+  <!-- URL -->
+  <text x="80" y="560" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="19" fill="#94a3b8" font-weight="600">syafrizalocean.github.io/Portofolio</text>
+
+  <!-- SH logo mark -->
+  <g transform="translate(910, 195)">
+    <rect x="0" y="0" width="200" height="200" rx="40" fill="url(#oglogo)"/>
+    <text x="100" y="140" font-family="Georgia, serif" font-size="100" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-3">SH</text>
+  </g>
+
+  <!-- Bottom decorative wave -->
+  <path d="M 0 605 Q 200 585 400 605 T 800 605 T 1200 605 L 1200 630 L 0 630 Z" fill="#ea580c" opacity="0.15"/>
+  <path d="M 0 615 Q 200 595 400 615 T 800 615 T 1200 615 L 1200 630 L 0 630 Z" fill="#1e40af" opacity="0.12"/>
+</svg>
