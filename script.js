@@ -97,16 +97,30 @@ const skillsData = [
     {
         icon: "◆",
         type: "hard",
-        category: "WebGIS & Programming",
-        desc: "Pengembangan platform WebGIS, front-end modern, dan integrasi IoT untuk aplikasi spasial interaktif.",
-        items: ["Python", "JavaScript", "React", "GeoDjango", "Leaflet.js", "WEBGIS", "IoT (Arduino)"]
+        category: "Front-end Development",
+        desc: "Pengembangan antarmuka WebGIS interaktif dan aplikasi web responsif dengan library modern.",
+        items: ["React", "JavaScript", "HTML/CSS", "Leaflet.js", "WebGIS UI", "Responsive Design"]
     },
     {
         icon: "▤",
         type: "hard",
-        category: "Analysis & Tools",
-        desc: "Komputasi ilmiah, analisis data, dan pengoperasian tool profesional untuk pemetaan & visualisasi.",
-        items: ["Matlab", "Fortran", "Data Analysis", "AutoCAD", "ArcGIS", "QGIS", "Notion", "MS Office"]
+        category: "Back-end Development",
+        desc: "Pengembangan REST API, integrasi database geospasial, dan back-end scalable untuk platform WebGIS.",
+        items: ["Python", "GeoDjango", "Django REST Framework", "REST API", "PostgreSQL", "PostGIS"]
+    },
+    {
+        icon: "≋",
+        type: "hard",
+        category: "Marine Data & Oceanography",
+        desc: "Pengolahan dan analisis data metocean, penginderaan jauh, pemodelan numerik, dan survei hidrografi lapangan.",
+        items: ["Metocean Data Processing", "Remote Sensing", "Ocean Modeling", "Hydrographic Survey", "Data Visualization", "Matlab", "Fortran"]
+    },
+    {
+        icon: "⚡",
+        type: "hard",
+        category: "IoT & Instrumentation",
+        desc: "Desain dan implementasi sensor IoT untuk pemantauan lingkungan dengan mikrokontroler dan sistem tenaga mandiri.",
+        items: ["Arduino", "ESP32", "C++", "Sensor Development", "Solar-Powered Systems", "IoT Data Acquisition"]
     },
     {
         icon: "⬢",
@@ -142,7 +156,7 @@ const workData = [
     {
         avatar: "KKP", logo: "kkp",
         date: "Sep 2024 — Des 2025",
-        title: "Research Assistant & WEBGIS Developer",
+        title: "Research Assistant & WebGIS Developer",
         org: "ITB × Kementerian Kelautan dan Perikanan (KKP)",
         desc: "Membangun geoportal WebGIS interaktif dengan GeoDjango dan Leaflet.js, mengintegrasikan data metocean real-time (arus, gelombang, angin) dari CMEMS dan ECMWF untuk perencanaan spasial pesisir."
     },
