@@ -88,6 +88,7 @@ const partnersData = [
     { name: "Protokol ITB", file: "protokol-itb" },
     { name: "Hidayahsubuh", file: "hidayahsubuh" },
     { name: "ALC Indonesia", file: "alc" },
+    { name: "Jinje Smart Academy", file: "jinje" },
     { name: "Sakola Kembara", file: "sakola-kembara" },
     { name: "Rumah Amal Salman", file: "rumah-amal-salman" }
 ];
@@ -121,28 +122,28 @@ const skillsData = [
 
 const workData = [
     {
-        avatar: "BRIN",
+        avatar: "BRIN", logo: "brin",
         date: "Okt 2025 — Sekarang",
         title: "Geospatial Web Developer & Field Researcher",
         org: "National Research and Innovation Agency (BRIN)",
         desc: "Mengembangkan antarmuka front-end platform web DiVolca.Net menggunakan React, mengintegrasikan multi-source API vulkanologi untuk mendukung mitigasi bencana nasional."
     },
     {
-        avatar: "PTP",
+        avatar: "PTP", logo: "prihaditama",
         date: "Mar — Apr 2026",
         title: "Marine Geophysics Intern",
         org: "PT. Prihaditama Geosciences & Oceanography Consulting",
         desc: "Memproses data Sub-Bottom Profiler (SBP) dan Ground Penetrating Radar (GPR) menggunakan ReflexW; menyusun 2D utility alignment dan peta batas subsurface di AutoCAD sebagai deliverable engineering."
     },
     {
-        avatar: "KKP",
+        avatar: "KKP", logo: "kkp",
         date: "Sep 2024 — Des 2025",
         title: "Research Assistant & WEBGIS Developer",
         org: "ITB × Kementerian Kelautan dan Perikanan (KKP)",
         desc: "Membangun geoportal WebGIS interaktif dengan GeoDjango dan Leaflet.js, mengintegrasikan data metocean real-time (arus, gelombang, angin) dari CMEMS dan ECMWF untuk perencanaan spasial pesisir."
     },
     {
-        avatar: "PTB",
+        avatar: "PTB", logo: "brajakara",
         date: "Jun 2024 — Agu 2025",
         title: "Web Developer & IoT Instrumentation Intern",
         org: "PT. Brajakara Teknologi Media",
@@ -150,48 +151,110 @@ const workData = [
     }
 ];
 
+const teachingData = [
+    {
+        avatar: "JIN", logo: "jinje",
+        date: "Jun 2026 — Sekarang",
+        title: "Private Tutor — Mathematics & Physics",
+        org: "Bimbel Jinje Smart Academy",
+        desc: "Mengajar les privat online Matematika dan Fisika untuk siswa SMP dan SMA, mengadaptasi kurikulum sesuai profil belajar masing-masing siswa."
+    },
+    {
+        avatar: "ALC", logo: "alc",
+        date: "Sep 2025 — Mei 2026",
+        title: "Physics Olympiad Coach (Regional & Provincial)",
+        org: "ALC Indonesia",
+        desc: "Melatih siswa SMA dan SMP untuk Olimpiade Fisika tingkat Kabupaten dan Provinsi di 4 sekolah mitra di Jawa Barat, Kalimantan Tengah, dan Jawa Timur. Delivery secara daring dan luring."
+    }
+];
+
 const orgData = [
     {
-        avatar: "HS",
+        avatar: "HS", logo: "hidayahsubuh",
         date: "Jun 2025 — Sekarang",
         title: "Founder & Community Lead",
         org: "Hidayahsubuh.id",
         desc: "Mendirikan dan memimpin komunitas kemanusiaan 130+ anggota; menjalankan 20+ program sosial termasuk Qurban, kunjungan panti asuhan, dan distribusi sembako."
     },
     {
-        avatar: "ITB",
+        avatar: "ITB", logo: "itb",
         date: "Feb — Jul 2025",
         title: "Head Teaching Assistant — Numerical Methods",
         org: "Institut Teknologi Bandung (ITB)",
         desc: "Memimpin tim asisten praktikum satu semester; mengelola scheduling, timeline operasional, dan sistem grading terstandar untuk 6 modul komputasi inti."
     },
     {
-        avatar: "PITB",
+        avatar: "PITB", logo: "protokol-itb",
         date: "Jul 2024 — Sekarang",
         title: "Core Protocol Officer",
         org: "Protokol ITB",
         desc: "Mengkoordinasi protokoler acara kampus dengan 15.000+ peserta per event (Wisuda, Studium Generale); menjadi liaison utama untuk VIP dan pimpinan universitas."
     },
     {
-        avatar: "CDT",
+        avatar: "CDT", logo: "itb",
         date: "Des 2023 — Feb 2025",
         title: "Operational & Event Coordinator",
         org: "Character Development Training (CDT) ITB 2024",
         desc: "Memimpin 50 anggota panitia lapangan untuk program orientasi 5.000 mahasiswa; merancang rundown acara dan menjadi MC utama."
     },
     {
-        avatar: "OGG",
+        avatar: "OGG", logo: "itb",
         date: "Des 2022 — Jun 2023",
         title: "Head of Human Resource (PMSDM)",
         org: "Olimpiade Geografi dan Geosains (OGG) FITB ITB",
         desc: "Memimpin siklus rekrutmen dan appraisal panitia serta kepala divisi dengan framework terstruktur di Notion dan Excel; menangani relasi personal dan resolusi konflik internal."
     },
     {
-        avatar: "FBM",
+        avatar: "FBM", logo: "itb",
         date: "Okt 2022 — Apr 2024",
         title: "External Relations Staff",
         org: "Forum Bidikmisi ITB",
         desc: "Menjadi liaison eksternal untuk capacity-building seminar; berkoordinasi dengan subject matter expert untuk delivery sesi edukatif."
+    }
+];
+
+const volunteerData = [
+    {
+        avatar: "ITB", logo: "itb",
+        date: "Okt 2025 — Sekarang",
+        title: "Technical Assistant — EQUITY Community Development Program",
+        org: "Institut Teknologi Bandung × LPDP · Cirebon",
+        desc: "Merakit dan memasang fasilitas pengering rumput laut hibrida panel surya + heater elektrik untuk mengoptimalkan pasca-panen petani pesisir Muara. Output terdaftar HAKI (Solar-Powered Seaweed Drying System)."
+    },
+    {
+        avatar: "ITB", logo: "itb",
+        date: "Mar — Sep 2025",
+        title: "Lead Instrument Engineer & Web Developer — VARUNA WATCH",
+        org: "Institut Teknologi Bandung · Selayar Islands",
+        desc: "Memimpin pengembangan sensor pesisir untuk mitigasi tsunami; menghasilkan HAKI (Sep 2025). Deploy lapangan di pulau terpencil Madu dan Karumpa serta membangun sistem visualisasi data real-time."
+    },
+    {
+        avatar: "ITB", logo: "itb",
+        date: "Mei 2024 — Jul 2025",
+        title: "Program Facilitator & Educator — Sekolah Siaga Bencana",
+        org: "Institut Teknologi Bandung · Garut",
+        desc: "Edukasi siswa lokal tentang mitigasi bencana pesisir; menerjemahkan konsep oseanografi kompleks (rip current, gelombang bencana) menjadi panduan keselamatan yang applicable."
+    },
+    {
+        avatar: "SK", logo: "sakola-kembara",
+        date: "2023 — 2026",
+        title: "Volunteer UTBK Instructor",
+        org: "Sakola Kembara · Cirebon, Cililin, Bandung",
+        desc: "Coaching UTBK pro-bono untuk siswa SMA prasejahtera di 3 kota selama 3 tahun berturut-turut. Sesi weekend paralel dengan aktivitas akademik dan profesional."
+    },
+    {
+        avatar: "KWI", logo: "itb",
+        date: "Mar — Mei 2024",
+        title: "Project Leader Ramadhan ITB Cirebon 1445 H",
+        org: "Keluarga Mahasiswa Islam ITB Kampus Cirebon (KAWAI ITB)",
+        desc: "Memimpin rangkaian program Ramadhan di ITB Kampus Cirebon; mengoordinasi tim untuk pelaksanaan kegiatan spiritual dan sosial."
+    },
+    {
+        avatar: "ASR", logo: "itb",
+        date: "Nov 2022 — Apr 2023",
+        title: "Volunteer — Asrama ITB Mengajar",
+        org: "Asrama ITB",
+        desc: "Mengajar dan mendampingi belajar untuk siswa di sekitar area Asrama ITB sebagai bagian dari program pengabdian mahasiswa baru."
     }
 ];
 
@@ -368,9 +431,12 @@ const renderSkills = () => {
 
 const renderTimeline = (containerId, data) => {
     const container = document.getElementById(containerId);
+    if (!container) return;
     container.innerHTML = data.map((item, i) => `
-        <div class="timeline-item fade-in" style="transition-delay:${i * 0.08}s">
-            <div class="timeline-avatar">${item.avatar}</div>
+        <div class="timeline-item fade-in" style="transition-delay:${i * 0.06}s">
+            <div class="timeline-avatar" data-fallback="${item.avatar}">
+                ${item.logo ? `<img src="images/partner/${item.logo}.png" alt="${item.org}" onerror="this.remove()">` : ''}
+            </div>
             <div class="timeline-content">
                 <div class="timeline-date">${item.date}</div>
                 <h3 class="timeline-title">${item.title}</h3>
@@ -534,18 +600,22 @@ const setupNavToggle = () => {
 };
 
 const setupExperienceTabs = () => {
-    const buttons = document.querySelectorAll('.tab-btn');
-    const work = document.getElementById('timeline-work');
-    const org = document.getElementById('timeline-org');
+    const buttons = document.querySelectorAll('#experience .tab-btn');
+    const panels = {
+        work: document.getElementById('timeline-work'),
+        teach: document.getElementById('timeline-teach'),
+        org: document.getElementById('timeline-org')
+    };
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const tab = btn.dataset.tab;
-            if (tab === 'work') { work.style.display = 'block'; org.style.display = 'none'; }
-            else { work.style.display = 'none'; org.style.display = 'block'; }
-            org.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-            work.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            Object.entries(panels).forEach(([k, panel]) => {
+                if (!panel) return;
+                panel.style.display = k === tab ? 'block' : 'none';
+                panel.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            });
         });
     });
 };
@@ -555,7 +625,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderRoles();
     renderSkills();
     renderTimeline('timeline-work', workData);
+    renderTimeline('timeline-teach', teachingData);
     renderTimeline('timeline-org', orgData);
+    renderTimeline('timeline-volunteer', volunteerData);
     renderSoftwareOse();
     renderExpertise();
     renderInstruments();

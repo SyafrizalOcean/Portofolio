@@ -13,6 +13,7 @@ Upload logo tiap mitra dengan nama file yang persis sesuai tabel. Format PNG (la
 | Protokol ITB         | `protokol-itb.png`           |
 | Hidayahsubuh         | `hidayahsubuh.png`           |
 | ALC Indonesia        | `alc.png`                    |
+| Jinje Smart Academy  | `jinje.png`                  |
 | Sakola Kembara       | `sakola-kembara.png`         |
 | Rumah Amal Salman    | `rumah-amal-salman.png`      |
 
