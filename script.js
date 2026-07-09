@@ -50,7 +50,7 @@ const experienceData = [
 
 const projectsData = [
     {
-        image: "images/project-1.svg",
+        image: "images/project-1.png",
         title: "Oceanographic Dynamic Dashboard",
         role: "WebGIS Developer & IoT Intern",
         description: "Antarmuka web interaktif dengan pemetaan dinamis, animasi vektor arus laut, dan temporal heatmap Sea Surface Temperature (SST). Terintegrasi CRUD penuh.",
