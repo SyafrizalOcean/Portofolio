@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" width="400" height="550">
+  <defs>
+    <linearGradient id="bookbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="60%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="bookwave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="550" fill="url(#bookbg)"/>
+  <path d="M 0 90 Q 100 40 200 80 Q 300 120 400 60 L 400 0 L 0 0 Z" fill="url(#bookwave)"/>
+  <path d="M 0 130 Q 120 90 240 130 Q 320 155 400 110 L 400 60 Q 300 100 200 70 Q 100 40 0 80 Z" fill="#ffffff" opacity="0.12"/>
+
+  <text x="40" y="220" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Menjelajahi</text>
+  <text x="40" y="262" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Laut <tspan font-style="italic" font-weight="400">dan</tspan></text>
+  <text x="40" y="304" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Mengenal</text>
+  <text x="40" y="346" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Bencananya</text>
+  <text x="200" y="380" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#a5f3fc" text-anchor="middle">Edisi Kedua</text>
+
+  <g fill="#a5f3fc" opacity="0.7">
+    <path d="M 50 430 l 22 -10 l -22 -10 l 6 10 z"/>
+    <circle cx="46" cy="430" r="1.5" fill="#0f172a"/>
+    <path d="M 90 448 l 22 -10 l -22 -10 l 6 10 z"/>
+    <circle cx="86" cy="448" r="1.5" fill="#0f172a"/>
+    <path d="M 340 442 l -22 -10 l 22 -10 l -6 10 z"/>
+    <path d="M 300 460 l -22 -10 l 22 -10 l -6 10 z"/>
+  </g>
+
+  <rect x="50" y="480" width="60" height="8" rx="2" fill="#ffffff" opacity="0.4"/>
+  <text x="200" y="520" font-family="system-ui, sans-serif" font-size="11" fill="#a5f3fc" opacity="0.7" text-anchor="middle">Placeholder</text>
+  <text x="200" y="535" font-family="system-ui, sans-serif" font-size="10" fill="#a5f3fc" opacity="0.6" text-anchor="middle">Ganti: assets/publikasi/book-cover.png</text>
+</svg>
