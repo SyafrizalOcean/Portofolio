@@ -1,5 +1,91 @@
 // --- 1. DATA ---
 
+const rolesData = [
+    {
+        icon: "◆",
+        title: "Software Engineer",
+        desc: "Pengembangan platform WebGIS, front-end React, dan aplikasi spasial interaktif untuk lembaga riset & pemerintah.",
+        tags: ["Python", "React", "Leaflet.js", "GeoDjango"]
+    },
+    {
+        icon: "≋",
+        title: "Oceanographer",
+        desc: "Analisis dan visualisasi data metocean, pemodelan oseanografi, remote sensing, dan survei hidrografi.",
+        tags: ["Metocean", "Pemodelan", "Remote Sensing", "Hidrografi"]
+    },
+    {
+        icon: "⟟",
+        title: "Instrumentation Engineer",
+        desc: "Desain sensor lapangan berbasis IoT dan pengoperasian instrumen oseanografi profesional untuk survei kelautan.",
+        tags: ["Arduino", "CTD", "RTK/GNSS", "IoT"]
+    }
+];
+
+const softwareOseData = [
+    { name: "Python", file: "python", fallback: "Py" },
+    { name: "Matlab", file: "matlab", fallback: "M" },
+    { name: "Fortran", file: "fortran", fallback: "Fx" },
+    { name: "Ocean Data View", file: "odv", fallback: "ODV" },
+    { name: "ArcGIS", file: "arcgis", fallback: "AG" },
+    { name: "QGIS", file: "qgis", fallback: "Q" },
+    { name: "Global Mapper", file: "globalmapper", fallback: "GM" },
+    { name: "COMCOT", file: "comcot", fallback: "CC" },
+    { name: "Surfer", file: "surfer", fallback: "Sf" },
+    { name: "AutoCAD", file: "autocad", fallback: "AC" },
+    { name: "ReflexW", file: "reflexw", fallback: "Rx" },
+    { name: "Google Earth Pro", file: "gearth", fallback: "GE" },
+    { name: "Google Earth Engine", file: "gee", fallback: "GEE" },
+    { name: "SWAN", file: "swan", fallback: "SW" },
+    { name: "WRPlot", file: "wrplot", fallback: "WR" }
+];
+
+const expertiseData = [
+    {
+        title: "Remote Sensing",
+        desc: "Interpretasi citra satelit oseanografi dan pengolahan data penginderaan jauh multispektral.",
+        file: "remote-sensing"
+    },
+    {
+        title: "Pemodelan Oseanografi",
+        desc: "Simulasi numerik dinamika laut, gelombang (SWAN), dan pemodelan tsunami (COMCOT).",
+        file: "pemodelan"
+    },
+    {
+        title: "Prosesing & Visualisasi Data",
+        desc: "Pengolahan data metocean mentah menjadi produk visual interaktif dan dashboard.",
+        file: "visualisasi"
+    },
+    {
+        title: "Survey Hidrografi",
+        desc: "Survei batimetri, topografi pesisir, dan akuisisi data lapangan menggunakan SBES & RTK.",
+        file: "hidrografi"
+    }
+];
+
+const instrumentsData = [
+    { name: "CTD", desc: "Conductivity, Temperature, Depth", file: "ctd" },
+    { name: "WQM", desc: "Water Quality Monitor", file: "wqm" },
+    { name: "Current Meter", desc: "Pengukur arus laut", file: "current-meter" },
+    { name: "Refraktometer", desc: "Salinitas air laut", file: "refraktometer" },
+    { name: "pH Meter", desc: "Keasaman air", file: "ph-meter" },
+    { name: "Theodolit", desc: "Survei topografi presisi", file: "theodolit" },
+    { name: "GPS", desc: "Positioning geospasial", file: "gps" },
+    { name: "AWS", desc: "Automatic Weather Station", file: "aws" },
+    { name: "Tide Gauge", desc: "Perekam pasang surut", file: "tide-gauge" },
+    { name: "SBES", desc: "Single-Beam Echosounder", file: "sbes" },
+    { name: "Nivo", desc: "Waterpass survei elevasi", file: "nivo" },
+    { name: "RTK", desc: "Real-Time Kinematic positioning", file: "rtk" },
+    { name: "GNSS", desc: "Global Navigation Satellite System", file: "gnss" }
+];
+
+const partnersData = [
+    { name: "PT Brajakara", file: "brajakara" },
+    { name: "PT Prihaditama", file: "prihaditama" },
+    { name: "ITB", file: "itb" },
+    { name: "KKP", file: "kkp" },
+    { name: "BRIN", file: "brin" }
+];
+
 const skillsData = [
     {
         icon: "◆",
@@ -195,6 +281,71 @@ const certData = [
 
 // --- 2. RENDER ---
 
+const renderRoles = () => {
+    const container = document.getElementById('roles-container');
+    container.innerHTML = rolesData.map((r, i) => `
+        <div class="role-card fade-in" style="transition-delay:${i * 0.1}s">
+            <div class="role-icon">${r.icon}</div>
+            <h3>${r.title}</h3>
+            <p>${r.desc}</p>
+            <ul class="role-tags">
+                ${r.tags.map(t => `<li>${t}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+};
+
+const renderSoftwareOse = () => {
+    const container = document.getElementById('software-ose-container');
+    container.innerHTML = softwareOseData.map((s, i) => `
+        <div class="software-card fade-in" style="transition-delay:${i * 0.04}s">
+            <div class="software-logo" data-fallback="${s.fallback}">
+                <img src="images/software/${s.file}.png" alt="${s.name}" onerror="this.remove()">
+            </div>
+            <div class="software-name">${s.name}</div>
+        </div>
+    `).join('');
+};
+
+const renderExpertise = () => {
+    const container = document.getElementById('expertise-container');
+    container.innerHTML = expertiseData.map((e, i) => `
+        <div class="expertise-card fade-in" style="transition-delay:${i * 0.08}s">
+            <div class="expertise-photo" data-label="${e.title}">
+                <img src="images/skill/${e.file}.jpg" alt="${e.title}" onerror="this.remove()">
+            </div>
+            <div class="expertise-body">
+                <h3>${e.title}</h3>
+                <p>${e.desc}</p>
+            </div>
+        </div>
+    `).join('');
+};
+
+const renderInstruments = () => {
+    const container = document.getElementById('instrument-container');
+    container.innerHTML = instrumentsData.map((it, i) => `
+        <div class="instrument-card fade-in" style="transition-delay:${i * 0.04}s">
+            <div class="instrument-photo" data-label="${it.name}">
+                <img src="images/instrument/${it.file}.jpg" alt="${it.name}" onerror="this.remove()">
+            </div>
+            <div class="instrument-body">
+                <strong>${it.name}</strong>
+                <span>${it.desc}</span>
+            </div>
+        </div>
+    `).join('');
+};
+
+const renderPartners = () => {
+    const container = document.getElementById('partners-container');
+    container.innerHTML = partnersData.map((p, i) => `
+        <div class="partner-card fade-in" data-name="${p.name}" style="transition-delay:${i * 0.06}s">
+            <img src="images/partner/${p.file}.png" alt="${p.name}" onerror="this.remove()">
+        </div>
+    `).join('');
+};
+
 const renderSkills = () => {
     const container = document.getElementById('skills-container');
     container.innerHTML = skillsData.map((skill, i) => `
@@ -388,11 +539,16 @@ const setupExperienceTabs = () => {
 
 // --- 4. INIT ---
 document.addEventListener('DOMContentLoaded', () => {
+    renderRoles();
     renderSkills();
     renderTimeline('timeline-work', workData);
     renderTimeline('timeline-org', orgData);
+    renderSoftwareOse();
+    renderExpertise();
+    renderInstruments();
     renderProjects();
     renderAwards();
+    renderPartners();
     renderCerts();
     typeEffect();
     setupScrollProgress();
