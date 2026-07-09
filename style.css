@@ -112,6 +112,77 @@ section { scroll-margin-top: 90px; position: relative; }
     color: #94a3b8;
 }
 
+/* Ocean particles in hero */
+.hero-particles {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+.hero-particles span {
+    position: absolute;
+    left: var(--x); top: var(--y);
+    width: var(--size); height: var(--size);
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.18;
+    filter: blur(0.3px);
+    animation: floatParticle var(--d) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+.hero-particles span:nth-child(even) { background: var(--blue); }
+.hero-particles span:nth-child(3n) { background: var(--teal); }
+@keyframes floatParticle {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+    25% { transform: translate(15px, -25px) scale(1.15); opacity: 0.32; }
+    50% { transform: translate(-8px, -50px) scale(0.95); opacity: 0.22; }
+    75% { transform: translate(10px, -25px) scale(1.1); opacity: 0.3; }
+}
+.hero-inner, .wave-container { position: relative; z-index: 1; }
+
+/* Wave divider (between hero and next section) */
+.wave-divider {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    line-height: 0; z-index: 2;
+    pointer-events: none;
+}
+.wave-divider svg {
+    width: 100%; height: 90px; display: block;
+}
+.wave-divider .wave-back {
+    fill: var(--bg-soft);
+    opacity: 0.6;
+    animation: waveDrift 18s ease-in-out infinite;
+}
+.wave-divider .wave-front {
+    fill: var(--bg-soft);
+    animation: waveDrift 14s ease-in-out infinite reverse;
+}
+@keyframes waveDrift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-40px); }
+}
+
+/* Decorative wave underline for section headings */
+.section-head h2 {
+    position: relative;
+    padding-bottom: 0.6rem;
+    display: inline-block;
+}
+.section-head h2::after {
+    content: '';
+    display: block;
+    margin-top: 0.5rem;
+    width: 80px; height: 8px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 8'><path d='M0,4 Q10,0 20,4 T40,4 T60,4 T80,4' fill='none' stroke='%23ea580c' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 80px 8px;
+}
+.section-dark .section-head h2::after {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 8'><path d='M0,4 Q10,0 20,4 T40,4 T60,4 T80,4' fill='none' stroke='%23fdba74' stroke-width='2'/></svg>");
+}
+.section-head-center h2::after { margin-left: auto; margin-right: auto; }
+
 /* Scroll progress */
 .scroll-progress {
     position: fixed; top: 0; left: 0; width: 100%; height: 2px;
@@ -901,11 +972,46 @@ h2 {
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: inherit;
 }
 .instrument-card:hover {
     transform: translateY(-3px);
-    border-color: var(--blue-soft);
+    border-color: var(--blue);
     box-shadow: var(--shadow-md);
+}
+.instrument-card:hover .instrument-photo::after {
+    opacity: 1;
+}
+.instrument-card:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+.instrument-photo::after {
+    content: '⤢';
+    position: absolute; top: 8px; right: 8px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 800;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.15);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 2;
+}
+.instrument-view {
+    display: block; font-size: 0.7rem;
+    color: var(--blue); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-top: 0.5rem;
 }
 .instrument-photo {
     aspect-ratio: 4 / 3;
@@ -1025,6 +1131,96 @@ h2 {
     border-radius: 20px;
     font-size: 0.72rem; color: var(--text-muted);
     font-weight: 600;
+}
+
+/* MODAL - Instrument lightbox */
+.modal {
+    position: fixed; inset: 0; z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+}
+.modal[hidden] { display: none; }
+.modal-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: modalFadeIn 0.3s ease;
+    cursor: zoom-out;
+}
+.modal-content {
+    position: relative; z-index: 1;
+    max-width: 640px; width: 100%;
+    max-height: 90vh; overflow: auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+.modal-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, var(--blue-tint), var(--primary-tint));
+    overflow: hidden;
+}
+.modal-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.modal-image-fallback {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 800; font-size: 2.4rem;
+    color: var(--text-secondary);
+    text-align: center; padding: 1rem;
+}
+.modal-image.has-image .modal-image-fallback { display: none; }
+.modal-body { padding: 1.7rem 2rem 2rem; }
+.modal-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.modal-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem; margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+.modal-body p {
+    color: var(--text-secondary);
+    font-size: 0.98rem; line-height: 1.6;
+}
+.modal-close {
+    position: absolute; top: 12px; right: 12px;
+    width: 40px; height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 1.6rem; line-height: 1;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 3;
+    transition: all 0.2s ease;
+}
+.modal-close:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: rotate(90deg);
+}
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* CONTACT */

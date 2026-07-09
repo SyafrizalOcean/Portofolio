@@ -28,6 +28,16 @@
     </nav>
 
     <header id="hero">
+        <div class="hero-particles" aria-hidden="true">
+            <span style="--x:8%;--y:22%;--size:8px;--d:14s;"></span>
+            <span style="--x:18%;--y:55%;--size:5px;--d:18s;--delay:2s;"></span>
+            <span style="--x:88%;--y:18%;--size:10px;--d:16s;--delay:1s;"></span>
+            <span style="--x:78%;--y:70%;--size:6px;--d:20s;--delay:3s;"></span>
+            <span style="--x:35%;--y:82%;--size:7px;--d:15s;--delay:4s;"></span>
+            <span style="--x:60%;--y:12%;--size:4px;--d:22s;--delay:2.5s;"></span>
+            <span style="--x:92%;--y:48%;--size:6px;--d:17s;--delay:5s;"></span>
+            <span style="--x:12%;--y:78%;--size:9px;--d:19s;--delay:1.5s;"></span>
+        </div>
         <div class="hero-inner">
             <div class="hero-text">
                 <p class="eyebrow">Software Engineer · Oceanographer · Instrumentation Engineer</p>
@@ -70,6 +80,12 @@
                 </div>
                 <div class="photo-accent-shape"></div>
             </div>
+        </div>
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path class="wave-back" d="M0,50 C240,90 480,10 720,50 C960,90 1200,10 1440,50 L1440,100 L0,100 Z"/>
+                <path class="wave-front" d="M0,60 C240,20 480,100 720,60 C960,20 1200,100 1440,60 L1440,100 L0,100 Z"/>
+            </svg>
         </div>
     </header>
 
@@ -189,7 +205,15 @@
                 <span class="section-index">07 — Karya</span>
                 <h2>Proyek Pilihan</h2>
             </div>
-            <div id="projects-container" class="projects-grid"></div>
+            <p class="section-sub">Karya dari 3 domain berbeda: pengembangan software WebGIS, riset oseanografi, dan instrumentasi IoT lapangan.</p>
+            <div class="experience-tabs project-tabs">
+                <button class="tab-btn active" data-ptab="it">Proyek IT</button>
+                <button class="tab-btn" data-ptab="ose">Proyek Oseanografi</button>
+                <button class="tab-btn" data-ptab="iot">Proyek IoT</button>
+            </div>
+            <div class="projects-grid" id="projects-it"></div>
+            <div class="projects-grid" id="projects-ose" style="display:none"></div>
+            <div class="projects-grid" id="projects-iot" style="display:none"></div>
         </div>
     </section>
 
@@ -264,6 +288,22 @@
             <p class="copyright">© 2026 Syafrizal Hidayat · Dibangun dengan HTML, CSS, &amp; Vanilla JS</p>
         </div>
     </footer>
+
+    <div class="modal" id="instrumentModal" hidden aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" id="modalClose" aria-label="Tutup">×</button>
+            <div class="modal-image" id="modalImageWrap">
+                <img id="modalImg" src="" alt="">
+                <div class="modal-image-fallback" id="modalFallback"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-eyebrow">Instrumen Oseanografi</div>
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

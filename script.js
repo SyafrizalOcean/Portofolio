@@ -315,6 +315,7 @@ const achievementData = [
 
 const projectsData = [
     {
+        category: "it",
         image: "images/project-1.png",
         fallback: "images/project-1.svg",
         title: "DiVolca.Net Volcanology Platform",
@@ -323,6 +324,7 @@ const projectsData = [
         tech: ["React", "JavaScript", "REST API", "Frontend"]
     },
     {
+        category: "it",
         image: "images/project-2.png",
         fallback: "images/project-2.svg",
         title: "KKP Coastal Geoportal",
@@ -331,6 +333,7 @@ const projectsData = [
         tech: ["GeoDjango", "Leaflet.js", "PostGIS", "CMEMS API"]
     },
     {
+        category: "it",
         image: "images/project-3.png",
         fallback: "images/project-3.svg",
         title: "Oceanographic Dynamic Dashboard",
@@ -339,12 +342,40 @@ const projectsData = [
         tech: ["Python", "JavaScript", "Data Viz", "IoT"]
     },
     {
+        category: "ose",
         image: "images/project-4.png",
         fallback: "images/project-4.svg",
         title: "Subsurface Mapping — SBP & GPR",
         role: "PT. Prihaditama · 2026",
         description: "Pengolahan data Sub-Bottom Profiler dan Ground Penetrating Radar dengan ReflexW; penyusunan 2D utility alignment dan peta subsurface di AutoCAD.",
         tech: ["ReflexW", "AutoCAD", "Marine Geophysics"]
+    },
+    {
+        category: "ose",
+        image: "images/project-7.png",
+        fallback: "images/project-7.svg",
+        title: "Batu Tara Submarine Morphology",
+        role: "Research Assistant · 2023",
+        description: "Digital Elevation Model resolusi 20 meter dengan kalibrasi topografi mentah pada ketinggian 748m untuk visualisasi 3D struktur vulkanik bawah laut.",
+        tech: ["Rasterio", "NumPy", "Matplotlib", "Python"]
+    },
+    {
+        category: "iot",
+        image: "images/project-5.png",
+        fallback: "images/project-5.svg",
+        title: "VARUNA WATCH Coastal Sensor",
+        role: "ITB · 2025 — HAKI Awarded",
+        description: "Prototipe sensor pesisir untuk pengukuran real-time permukaan laut dan mitigasi tsunami. Sistem off-grid berbasis Arduino + panel surya. Terdaftar HAKI (Sep 2025).",
+        tech: ["Arduino", "IoT", "C++", "Solar Power", "HAKI"]
+    },
+    {
+        category: "iot",
+        image: "images/project-6.png",
+        fallback: "images/project-6.svg",
+        title: "Solar-Powered Seaweed Drying System",
+        role: "ITB × LPDP · 2026 — HAKI Awarded",
+        description: "Fasilitas pengering rumput laut hibrida panel surya + heater elektrik untuk optimasi pasca-panen petani pesisir Cirebon. Program EQUITY Community Development. Terdaftar HAKI (Apr 2026).",
+        tech: ["Solar Power", "Hybrid System", "IoT Monitoring", "HAKI"]
     }
 ];
 
@@ -411,16 +442,68 @@ const renderExpertise = () => {
 const renderInstruments = () => {
     const container = document.getElementById('instrument-container');
     container.innerHTML = instrumentsData.map((it, i) => `
-        <div class="instrument-card fade-in" style="transition-delay:${i * 0.04}s">
+        <button type="button" class="instrument-card fade-in"
+                style="transition-delay:${i * 0.04}s"
+                data-name="${it.name}"
+                data-desc="${it.desc}"
+                data-img="images/instrument/${it.file}.jpg">
             <div class="instrument-photo" data-label="${it.name}">
                 <img src="images/instrument/${it.file}.jpg" alt="${it.name}" onerror="this.remove()">
             </div>
             <div class="instrument-body">
                 <strong>${it.name}</strong>
                 <span>${it.desc}</span>
+                <span class="instrument-view">Klik untuk lihat foto</span>
             </div>
-        </div>
+        </button>
     `).join('');
+};
+
+const setupInstrumentModal = () => {
+    const modal = document.getElementById('instrumentModal');
+    if (!modal) return;
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalFallback = document.getElementById('modalFallback');
+    const modalImageWrap = document.getElementById('modalImageWrap');
+
+    const open = (name, desc, imgSrc) => {
+        modalTitle.textContent = name;
+        modalDesc.textContent = desc;
+        modalFallback.textContent = name;
+        modalImageWrap.classList.remove('has-image');
+        modalImg.style.display = 'none';
+        modalImg.onload = () => {
+            modalImg.style.display = 'block';
+            modalImageWrap.classList.add('has-image');
+        };
+        modalImg.onerror = () => {
+            modalImg.style.display = 'none';
+            modalImageWrap.classList.remove('has-image');
+        };
+        modalImg.src = imgSrc;
+        modal.hidden = false;
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const close = () => {
+        modal.hidden = true;
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('.instrument-card').forEach(card => {
+        card.addEventListener('click', () => {
+            open(card.dataset.name, card.dataset.desc, card.dataset.img);
+        });
+    });
+    document.getElementById('modalClose').addEventListener('click', close);
+    modal.querySelector('.modal-backdrop').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) close();
+    });
 };
 
 const renderPartners = () => {
@@ -470,9 +553,13 @@ const renderTimeline = (containerId, data) => {
 };
 
 const renderProjects = () => {
-    const container = document.getElementById('projects-container');
-    container.innerHTML = projectsData.map((proj, i) => `
-        <div class="card project-card fade-in" style="transition-delay:${i * 0.12}s">
+    const containers = {
+        it: document.getElementById('projects-it'),
+        ose: document.getElementById('projects-ose'),
+        iot: document.getElementById('projects-iot')
+    };
+    const cardHtml = (proj, i) => `
+        <div class="card project-card fade-in" style="transition-delay:${i * 0.1}s">
             <div class="project-image">
                 <img src="${proj.image}" alt="${proj.title}" loading="lazy" onerror="this.onerror=null;this.src='${proj.fallback}'">
             </div>
@@ -485,7 +572,33 @@ const renderProjects = () => {
                 </div>
             </div>
         </div>
-    `).join('');
+    `;
+    Object.entries(containers).forEach(([cat, container]) => {
+        if (!container) return;
+        const items = projectsData.filter(p => p.category === cat);
+        container.innerHTML = items.map(cardHtml).join('');
+    });
+};
+
+const setupProjectTabs = () => {
+    const buttons = document.querySelectorAll('#projects .tab-btn');
+    const panels = {
+        it: document.getElementById('projects-it'),
+        ose: document.getElementById('projects-ose'),
+        iot: document.getElementById('projects-iot')
+    };
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const tab = btn.dataset.ptab;
+            Object.entries(panels).forEach(([k, panel]) => {
+                if (!panel) return;
+                panel.style.display = k === tab ? 'grid' : 'none';
+                panel.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            });
+        });
+    });
 };
 
 const renderAwards = () => {
@@ -661,6 +774,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollProgress();
     setupNavToggle();
     setupExperienceTabs();
+    setupProjectTabs();
+    setupInstrumentModal();
     setTimeout(() => {
         setupScrollAnimation();
         animateStats();
