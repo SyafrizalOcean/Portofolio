@@ -284,13 +284,6 @@ const achievementData = [
         year: "2022 — 2026"
     },
     {
-        badge: "H",
-        title: "Intellectual Property Rights (HAKI) × 2",
-        issuer: "Direktorat Jenderal Kekayaan Intelektual",
-        detail: "VARUNA WATCH Coastal Sensor (Sep 2025) & Solar-Powered Seaweed Drying Oven System — co-creator (Apr 2026).",
-        year: "2025 & 2026"
-    },
-    {
         badge: "S",
         title: "Dual Scholarship Recipient",
         issuer: "KIP Kuliah (KIPK) & PT Timah Tbk",
@@ -303,13 +296,29 @@ const achievementData = [
         issuer: "Startup Ecosystem × NUS Singapore & KIPK Forum Kemendikbud",
         detail: "Delegasi ITB di Startup Ecosystem Program with Universitas Tarumanagara × NUS Singapore (Jan 2025) dan National KIPK Forum di Kementerian Pendidikan (Mei 2024).",
         year: "2024 & 2025"
+    }
+];
+
+const hakiData = [
+    {
+        letter: "VW",
+        title: "VARUNA WATCH — Coastal Environmental Sensor",
+        type: "Ciptaan",
+        role: "Pencipta Utama · Lead Instrument Engineer",
+        date: "September 2025",
+        number: "EC002025184212",
+        related: "Proyek IoT · VARUNA WATCH",
+        institution: "Direktorat Jenderal Kekayaan Intelektual"
     },
     {
-        badge: "B",
-        title: "Co-author Buku Edukasi",
-        issuer: "\"Menjelajahi Laut dan Mengenal Bencananya\"",
-        detail: "Buku edukatif untuk meningkatkan literasi laut di kawasan Kalaotoa. ISBN 978-623-127-880-7.",
-        year: "Mei 2026"
+        letter: "SD",
+        title: "Solar-Powered Seaweed Drying Oven System",
+        type: "Ciptaan",
+        role: "Co-Creator · Technical Assistant",
+        date: "April 2026",
+        number: "EC002026053738",
+        related: "Proyek IoT · LPDP EQUITY Program",
+        institution: "Direktorat Jenderal Kekayaan Intelektual"
     }
 ];
 
@@ -616,6 +625,30 @@ const renderAwards = () => {
     `).join('');
 };
 
+const renderHaki = () => {
+    const container = document.getElementById('haki-container');
+    if (!container) return;
+    container.innerHTML = hakiData.map((h, i) => `
+        <div class="haki-card fade-in" style="transition-delay:${i * 0.12}s">
+            <div class="haki-seal-wrap">
+                <div class="haki-seal">${h.letter}</div>
+                <div class="haki-type">${h.type}</div>
+            </div>
+            <div class="haki-body">
+                <div class="haki-eyebrow">Kekayaan Intelektual (HAKI)</div>
+                <h3>${h.title}</h3>
+                <div class="haki-role">${h.role}</div>
+                <div class="haki-meta">
+                    <div class="haki-meta-row"><span>No. Registrasi</span><strong>${h.number}</strong></div>
+                    <div class="haki-meta-row"><span>Tanggal</span><strong>${h.date}</strong></div>
+                    <div class="haki-meta-row"><span>Instansi</span><strong>${h.institution}</strong></div>
+                    <div class="haki-meta-row"><span>Terkait</span><strong>${h.related}</strong></div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+};
+
 const renderCerts = () => {
     const container = document.getElementById('cert-container');
     container.innerHTML = certData.map((c, i) => `
@@ -761,6 +794,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderInstruments();
     renderProjects();
     renderAwards();
+    renderHaki();
     renderPartners();
     renderCerts();
     typeEffect();

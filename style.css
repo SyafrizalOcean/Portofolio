@@ -1092,6 +1092,212 @@ h2 {
 }
 .partner-card:hover img { filter: grayscale(0); }
 
+/* PUBLIKASI - Book showcase card */
+.pub-book {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+.pub-book::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+}
+.pub-book::after {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-tint) 0%, transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+.pub-book > * { position: relative; z-index: 1; }
+.pub-book-cover {
+    position: relative;
+    aspect-ratio: 4 / 5.5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease;
+    background: var(--bg-soft);
+}
+.pub-book:hover .pub-book-cover { transform: rotate(0deg) scale(1.02); }
+.pub-book-cover img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+}
+.pub-book-tag {
+    position: absolute; top: 12px; right: 12px;
+    background: #ffffff; color: var(--primary);
+    padding: 0.35rem 0.75rem; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+.pub-eyebrow {
+    font-size: 0.72rem; font-weight: 700;
+    color: var(--blue); letter-spacing: 2.5px;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+}
+.pub-book-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem; line-height: 1.2;
+    letter-spacing: -0.5px; margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+.pub-desc {
+    color: var(--text-secondary);
+    font-size: 0.98rem; line-height: 1.65;
+    margin-bottom: 1.5rem;
+}
+.pub-meta {
+    display: grid; gap: 0.6rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.pub-meta-row {
+    display: grid; grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    font-size: 0.88rem;
+    align-items: center;
+}
+.pub-meta-row span {
+    color: var(--text-muted);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+}
+.pub-meta-row strong { color: var(--text-primary); font-weight: 600; }
+.pub-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--blue); font-weight: 700; font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border: 1.5px solid var(--blue);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+.pub-link:hover {
+    background: var(--blue); color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.25);
+}
+.pub-link:hover svg { transform: translateX(3px); }
+.pub-link svg { transition: transform 0.25s ease; }
+
+/* HAKI Certificate Cards */
+.haki-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin-top: 1rem;
+}
+.haki-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+.haki-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--amber-tint) 0%, transparent 40%);
+    pointer-events: none;
+    opacity: 0.6;
+}
+.haki-card > * { position: relative; z-index: 1; }
+.haki-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    border-color: var(--amber-soft);
+}
+.haki-seal-wrap {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.7rem;
+    padding-top: 0.3rem;
+}
+.haki-seal {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24, #d97706 60%, #92400e);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-weight: 800; font-size: 2rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35),
+                inset 0 -6px 12px rgba(0, 0, 0, 0.15),
+                inset 0 4px 8px rgba(255, 255, 255, 0.25);
+    letter-spacing: -1px;
+    position: relative;
+}
+.haki-seal::before {
+    content: '';
+    position: absolute; inset: 4px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+}
+.haki-type {
+    background: var(--text-primary);
+    color: #ffffff;
+    padding: 0.3rem 0.85rem; border-radius: 20px;
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+}
+.haki-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    color: var(--amber-dark); letter-spacing: 2.5px;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.haki-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem; line-height: 1.3;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+.haki-role {
+    font-size: 0.85rem; color: var(--blue);
+    font-weight: 600; margin-bottom: 1rem;
+}
+.haki-meta {
+    display: grid; gap: 0.4rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+}
+.haki-meta-row {
+    display: grid; grid-template-columns: 110px 1fr;
+    gap: 0.8rem;
+    font-size: 0.82rem;
+}
+.haki-meta-row span {
+    color: var(--text-muted);
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    align-self: center;
+}
+.haki-meta-row strong {
+    color: var(--text-primary); font-weight: 600;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+}
+.haki-meta-row:nth-child(1) strong { color: var(--amber-dark); font-weight: 700; }
+
 /* AWARDS / PRESTASI */
 .award-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -1336,6 +1542,14 @@ footer .logo-mark { background: var(--primary); color: #fff; }
     .timeline-avatar img { padding: 6px; }
     .timeline-content { padding: 1.1rem 1.2rem; }
     .contact-card { padding: 1.8rem; }
+    .pub-book { grid-template-columns: 1fr; gap: 2rem; padding: 1.8rem; }
+    .pub-book-cover { max-width: 240px; margin: 0 auto; transform: rotate(0); }
+    .pub-book-info h3 { font-size: 1.4rem; }
+    .pub-meta-row { grid-template-columns: 80px 1fr; gap: 0.6rem; }
+    .haki-grid { grid-template-columns: 1fr; }
+    .haki-card { grid-template-columns: 90px 1fr; padding: 1.4rem; gap: 1rem; }
+    .haki-seal { width: 80px; height: 80px; font-size: 1.6rem; }
+    .haki-meta-row { grid-template-columns: 90px 1fr; }
     .cert-card, .award-card { grid-template-columns: 1fr; }
     .cert-badge, .award-badge { width: 44px; height: 44px; font-size: 1.2rem; }
     .software-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
