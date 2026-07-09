@@ -96,27 +96,45 @@ const partnersData = [
 const skillsData = [
     {
         icon: "◆",
-        category: "WebGIS Development",
-        desc: "Membangun platform spasial interaktif untuk visualisasi data geografis.",
-        items: ["Python", "GeoDjango", "Leaflet.js", "JavaScript", "React"]
+        type: "hard",
+        category: "Front-end Development",
+        desc: "Pengembangan antarmuka WebGIS interaktif dan aplikasi web responsif dengan library modern.",
+        items: ["React", "JavaScript", "HTML/CSS", "Leaflet.js", "WebGIS UI", "Responsive Design"]
     },
     {
         icon: "▤",
-        category: "Spatial Data & GIS",
-        desc: "Pemrosesan dan analisis data spasial dari berbagai sumber.",
-        items: ["QGIS", "PostGIS", "Rasterio", "NumPy", "Cartopy"]
-    },
-    {
-        icon: "⟟",
-        category: "Backend & Database",
-        desc: "Pengembangan REST API dan manajemen database geospasial.",
-        items: ["Django REST", "PostgreSQL", "PostGIS", "SQL"]
+        type: "hard",
+        category: "Back-end Development",
+        desc: "Pengembangan REST API, integrasi database geospasial, dan back-end scalable untuk platform WebGIS.",
+        items: ["Python", "GeoDjango", "Django REST Framework", "REST API", "PostgreSQL", "PostGIS"]
     },
     {
         icon: "≋",
-        category: "Marine Data Analysis",
-        desc: "Analisis data oseanografi dan metocean untuk pemodelan.",
-        items: ["Metocean Data", "CMEMS", "ECMWF", "Matplotlib"]
+        type: "hard",
+        category: "Marine Data & Oceanography",
+        desc: "Pengolahan dan analisis data metocean, penginderaan jauh, pemodelan numerik, dan survei hidrografi lapangan.",
+        items: ["Metocean Data Processing", "Remote Sensing", "Ocean Modeling", "Hydrographic Survey", "Data Visualization", "Matlab", "Fortran"]
+    },
+    {
+        icon: "⚡",
+        type: "hard",
+        category: "IoT & Instrumentation",
+        desc: "Desain dan implementasi sensor IoT untuk pemantauan lingkungan dengan mikrokontroler dan sistem tenaga mandiri.",
+        items: ["Arduino", "ESP32", "C++", "Sensor Development", "Solar-Powered Systems", "IoT Data Acquisition"]
+    },
+    {
+        icon: "⬢",
+        type: "soft",
+        category: "Leadership & Management",
+        desc: "Manajemen proyek skala besar, kepemimpinan tim lintas divisi, dan pengelolaan sumber daya manusia.",
+        items: ["Project Management", "Event Management (15.000+)", "Team Leadership (50+)", "Conflict Resolution", "Recruitment", "Performance Appraisal"]
+    },
+    {
+        icon: "⟟",
+        type: "soft",
+        category: "Communication",
+        desc: "Komunikasi publik, protokoler high-stakes event, dan koordinasi lintas fungsi dengan stakeholder VIP.",
+        items: ["Public Speaking", "Master of Ceremonies (MC)", "Stakeholder Management", "Cross-Functional Coordination", "Bilingual (ID · EN)"]
     }
 ];
 
@@ -138,7 +156,7 @@ const workData = [
     {
         avatar: "KKP", logo: "kkp",
         date: "Sep 2024 — Des 2025",
-        title: "Research Assistant & WEBGIS Developer",
+        title: "Research Assistant & WebGIS Developer",
         org: "ITB × Kementerian Kelautan dan Perikanan (KKP)",
         desc: "Membangun geoportal WebGIS interaktif dengan GeoDjango dan Leaflet.js, mengintegrasikan data metocean real-time (arus, gelombang, angin) dari CMEMS dan ECMWF untuk perencanaan spasial pesisir."
     },
@@ -416,9 +434,10 @@ const renderPartners = () => {
 };
 
 const renderSkills = () => {
-    const container = document.getElementById('skills-container');
-    container.innerHTML = skillsData.map((skill, i) => `
-        <div class="card fade-in" style="transition-delay:${i * 0.1}s">
+    const hardContainer = document.getElementById('skills-hard-container');
+    const softContainer = document.getElementById('skills-soft-container');
+    const buildCards = (items, offset = 0) => items.map((skill, i) => `
+        <div class="card skill-card skill-${skill.type} fade-in" style="transition-delay:${(i + offset) * 0.1}s">
             <div class="skill-icon">${skill.icon}</div>
             <h3>${skill.category}</h3>
             <p>${skill.desc}</p>
@@ -427,6 +446,10 @@ const renderSkills = () => {
             </div>
         </div>
     `).join('');
+    const hard = skillsData.filter(s => s.type === 'hard');
+    const soft = skillsData.filter(s => s.type === 'soft');
+    if (hardContainer) hardContainer.innerHTML = buildCards(hard);
+    if (softContainer) softContainer.innerHTML = buildCards(soft, hard.length);
 };
 
 const renderTimeline = (containerId, data) => {

@@ -491,6 +491,17 @@ h2 {
     background: var(--primary-tint); color: var(--primary);
     border: 1px solid var(--primary-soft);
 }
+.skill-card.skill-soft .skill-icon {
+    background: var(--blue-tint); color: var(--blue);
+    border-color: var(--blue-soft);
+}
+.skill-card.skill-soft:hover {
+    border-color: var(--blue-soft);
+}
+.skill-card.skill-soft .tech-tag {
+    background: var(--primary-tint); color: var(--primary);
+    border-color: var(--primary-soft);
+}
 .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 700; }
 .card p { flex-grow: 1; font-size: 0.92rem; color: var(--text-secondary); }
 .tech-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
