@@ -59,19 +59,75 @@ const orgData = [
         date: "Jun 2025 — Sekarang",
         title: "Founder & Community Lead",
         org: "Hidayahsubuh.id",
-        desc: "Mendirikan dan memimpin komunitas kemanusiaan beranggotakan 130+ orang; menjalankan 20+ program sosial termasuk Qurban, kunjungan panti asuhan, dan distribusi sembako."
+        desc: "Mendirikan dan memimpin komunitas kemanusiaan 130+ anggota; menjalankan 20+ program sosial termasuk Qurban, kunjungan panti asuhan, dan distribusi sembako."
     },
     {
-        date: "Jul 2023 — Sekarang",
+        date: "Feb — Jul 2025",
+        title: "Head Teaching Assistant — Numerical Methods",
+        org: "Institut Teknologi Bandung (ITB)",
+        desc: "Memimpin tim asisten praktikum satu semester; mengelola scheduling, timeline operasional, dan sistem grading terstandar untuk 6 modul komputasi inti."
+    },
+    {
+        date: "Jul 2024 — Sekarang",
         title: "Core Protocol Officer",
         org: "Protokol ITB",
         desc: "Mengkoordinasi protokoler acara kampus dengan 15.000+ peserta per event (Wisuda, Studium Generale); menjadi liaison utama untuk VIP dan pimpinan universitas."
     },
     {
         date: "Des 2023 — Feb 2025",
-        title: "Operational Coordinator",
+        title: "Operational & Event Coordinator",
         org: "Character Development Training (CDT) ITB 2024",
         desc: "Memimpin 50 anggota panitia lapangan untuk program orientasi 5.000 mahasiswa; merancang rundown acara dan menjadi MC utama."
+    },
+    {
+        date: "Des 2022 — Jun 2023",
+        title: "Head of Human Resource (PMSDM)",
+        org: "Olimpiade Geografi dan Geosains (OGG) FITB ITB",
+        desc: "Memimpin siklus rekrutmen dan appraisal panitia serta kepala divisi dengan framework terstruktur di Notion dan Excel; menangani relasi personal dan resolusi konflik internal."
+    },
+    {
+        date: "Okt 2022 — Apr 2024",
+        title: "External Relations Staff",
+        org: "Forum Bidikmisi ITB",
+        desc: "Menjadi liaison eksternal untuk capacity-building seminar; berkoordinasi dengan subject matter expert untuk delivery sesi edukatif."
+    }
+];
+
+const achievementData = [
+    {
+        badge: "C",
+        title: "Cum Laude Candidate",
+        issuer: "Institut Teknologi Bandung (ITB)",
+        detail: "GPA 3.74/4.00 · 4× Dean's List Awardee · Head TA Numerical Methods.",
+        year: "2022 — 2026"
+    },
+    {
+        badge: "H",
+        title: "Intellectual Property Rights (HAKI) × 2",
+        issuer: "Direktorat Jenderal Kekayaan Intelektual",
+        detail: "VARUNA WATCH Coastal Sensor (Sep 2025) & Solar-Powered Seaweed Drying Oven System — co-creator (Apr 2026).",
+        year: "2025 & 2026"
+    },
+    {
+        badge: "S",
+        title: "Dual Scholarship Recipient",
+        issuer: "KIP Kuliah (KIPK) & PT Timah Tbk",
+        detail: "Penerima beasiswa nasional (Kemendikbud) dan korporasi (PT Timah Tbk) sepanjang studi S1.",
+        year: "2022 — 2026"
+    },
+    {
+        badge: "D",
+        title: "Official ITB Delegate",
+        issuer: "Startup Ecosystem × NUS Singapore & KIPK Forum Kemendikbud",
+        detail: "Delegasi ITB di Startup Ecosystem Program with Universitas Tarumanagara × NUS Singapore (Jan 2025) dan National KIPK Forum di Kementerian Pendidikan (Mei 2024).",
+        year: "2024 & 2025"
+    },
+    {
+        badge: "B",
+        title: "Co-author Buku Edukasi",
+        issuer: "\"Menjelajahi Laut dan Mengenal Bencananya\"",
+        detail: "Buku edukatif untuk meningkatkan literasi laut di kawasan Kalaotoa. ISBN 978-623-127-880-7.",
+        year: "Mei 2026"
     }
 ];
 
@@ -169,6 +225,21 @@ const renderProjects = () => {
                 <div class="tech-stack">
                     ${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                 </div>
+            </div>
+        </div>
+    `).join('');
+};
+
+const renderAwards = () => {
+    const container = document.getElementById('award-container');
+    container.innerHTML = achievementData.map((a, i) => `
+        <div class="award-card fade-in" style="transition-delay:${i * 0.08}s">
+            <div class="award-badge">${a.badge}</div>
+            <div class="award-body">
+                <h3>${a.title}</h3>
+                <div class="award-issuer">${a.issuer}</div>
+                <div class="award-detail">${a.detail}</div>
+                <span class="award-year">${a.year}</span>
             </div>
         </div>
     `).join('');
@@ -308,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTimeline('timeline-work', workData);
     renderTimeline('timeline-org', orgData);
     renderProjects();
+    renderAwards();
     renderCerts();
     typeEffect();
     setupScrollProgress();
