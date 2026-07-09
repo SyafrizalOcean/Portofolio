@@ -618,7 +618,7 @@ const renderAwards = () => {
 
 const renderCerts = () => {
     const container = document.getElementById('cert-container');
-    const cards = certData.map((c, i) => `
+    container.innerHTML = certData.map((c, i) => `
         <div class="cert-card fade-in" style="transition-delay:${i * 0.1}s">
             <div class="cert-badge">${c.badge}</div>
             <div class="cert-body">
@@ -631,13 +631,6 @@ const renderCerts = () => {
             </div>
         </div>
     `).join('');
-    const placeholder = `
-        <div class="cert-placeholder fade-in">
-            <strong>+ Ruang untuk sertifikasi berikutnya</strong><br>
-            Tambahkan sertifikat baru di <code>script.js</code> → array <code>certData</code>.
-        </div>
-    `;
-    container.innerHTML = cards + placeholder;
 };
 
 // --- 3. INTERAKSI ---
