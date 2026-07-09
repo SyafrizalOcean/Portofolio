@@ -32,7 +32,7 @@ const workData = [
         date: "Okt 2025 — Sekarang",
         title: "Software Engineering & Field Researcher",
         org: "National Research and Innovation Agency (BRIN)",
-        desc: "Mengembangkan platform web DiVolca.Net menggunakan React (frontend) dan GeoDjango (backend), mengintegrasikan multi-source API vulkanologi untuk mendukung mitigasi bencana nasional."
+        desc: "Mengembangkan antarmuka front-end platform web DiVolca.Net menggunakan React, mengintegrasikan multi-source API vulkanologi untuk mendukung mitigasi bencana nasional."
     },
     {
         date: "Mar — Apr 2026",
@@ -81,8 +81,8 @@ const projectsData = [
         fallback: "images/project-1.svg",
         title: "DiVolca.Net Volcanology Platform",
         role: "BRIN · 2025 — Present",
-        description: "Platform web vulkanologi dengan React & GeoDjango, mengintegrasikan multi-source API untuk mendukung sistem peringatan dini dan mitigasi bencana nasional.",
-        tech: ["React", "GeoDjango", "REST API", "Python"]
+        description: "Antarmuka front-end platform web vulkanologi dengan React, mengintegrasikan multi-source API untuk mendukung sistem peringatan dini dan mitigasi bencana nasional.",
+        tech: ["React", "JavaScript", "REST API", "Frontend"]
     },
     {
         image: "images/project-2.png",
