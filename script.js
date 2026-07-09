@@ -1,81 +1,129 @@
-// --- 1. DATA PORTFOLIO ---
+// --- 1. DATA ---
 
 const skillsData = [
     {
-        icon: "🗺️",
-        category: "WebGIS & Programming",
-        desc: "Membangun platform spasial interaktif dan API untuk data geospasial.",
-        items: ["Python", "GeoDjango", "Leaflet.js", "HTML/CSS/JS", "REST API"]
+        icon: "◆",
+        category: "WebGIS Development",
+        desc: "Membangun platform spasial interaktif untuk visualisasi data geografis.",
+        items: ["Python", "GeoDjango", "Leaflet.js", "JavaScript", "React"]
     },
     {
-        icon: "📡",
-        category: "IoT & Hardware",
-        desc: "Merancang sensor lapangan mandiri energi untuk pemantauan lingkungan.",
-        items: ["Arduino", "Hardware Assembly", "Solar-Powered Systems", "C++", "Flutter"]
+        icon: "▤",
+        category: "Spatial Data & GIS",
+        desc: "Pemrosesan dan analisis data spasial dari berbagai sumber.",
+        items: ["QGIS", "PostGIS", "Rasterio", "NumPy", "Cartopy"]
     },
     {
-        icon: "🌊",
-        category: "Marine Data Processing",
-        desc: "Mengolah data oseanografi mentah menjadi visualisasi yang bermakna.",
-        items: ["Rasterio", "NumPy", "Cartopy", "Oceanographic Modeling", "Matplotlib"]
+        icon: "⟟",
+        category: "Backend & Database",
+        desc: "Pengembangan REST API dan manajemen database geospasial.",
+        items: ["Django REST", "PostgreSQL", "PostGIS", "SQL"]
+    },
+    {
+        icon: "≋",
+        category: "Marine Data Analysis",
+        desc: "Analisis data oseanografi dan metocean untuk pemodelan.",
+        items: ["Metocean Data", "CMEMS", "ECMWF", "Matplotlib"]
     }
 ];
 
-const experienceData = [
+const workData = [
     {
-        date: "2024 — Sekarang",
-        title: "Oceanography Student",
-        org: "Institut Teknologi Bandung (ITB)",
-        desc: "Fokus pada oseanografi fisik, pemodelan komputasi, dan aplikasi data laut untuk pengambilan keputusan pesisir."
+        date: "Okt 2025 — Sekarang",
+        title: "Software Engineering & Field Researcher",
+        org: "National Research and Innovation Agency (BRIN)",
+        desc: "Mengembangkan platform web DiVolca.Net menggunakan React (frontend) dan GeoDjango (backend), mengintegrasikan multi-source API vulkanologi untuk mendukung mitigasi bencana nasional."
     },
     {
-        date: "2024",
-        title: "WebGIS Developer & IoT Intern",
-        org: "Oceanographic Research Project",
-        desc: "Membangun dashboard oseanografi dinamis dengan animasi vektor arus laut dan heatmap SST temporal terintegrasi CRUD."
+        date: "Mar — Apr 2026",
+        title: "Marine Geophysics Intern",
+        org: "PT. Prihaditama Geosciences & Oceanography Consulting",
+        desc: "Memproses data Sub-Bottom Profiler (SBP) dan Ground Penetrating Radar (GPR) menggunakan ReflexW; menyusun 2D utility alignment dan peta batas subsurface di AutoCAD sebagai deliverable engineering."
     },
     {
-        date: "2024",
-        title: "Lead Instrument Engineer",
-        org: "VARUNA WATCH Project",
-        desc: "Memimpin desain sensor pesisir off-grid berbasis Arduino dan tenaga surya untuk pemantauan permukaan laut real-time."
+        date: "Sep 2024 — Des 2025",
+        title: "Research Assistant & Web Developer",
+        org: "ITB × Kementerian Kelautan dan Perikanan (KKP)",
+        desc: "Membangun geoportal WebGIS interaktif dengan GeoDjango dan Leaflet.js, mengintegrasikan data metocean real-time (arus, gelombang, angin) dari CMEMS dan ECMWF untuk perencanaan spasial pesisir."
     },
     {
-        date: "2023",
-        title: "Research Assistant",
-        org: "Batu Tara Submarine Morphology Study",
-        desc: "Menghasilkan Digital Elevation Model resolusi 20 meter dan kalibrasi topografi bawah laut vulkanik."
+        date: "Jun 2024 — Agu 2025",
+        title: "Web Developer & IoT Instrumentation Intern",
+        org: "PT. Brajakara Teknologi Media",
+        desc: "Mengimplementasikan animasi vektor arus laut dinamis dan heatmap SST dengan Python; merakit sistem IoT berbasis Arduino dan antarmuka CRUD untuk manajemen data oseanografi."
+    }
+];
+
+const orgData = [
+    {
+        date: "Jun 2025 — Sekarang",
+        title: "Founder & Community Lead",
+        org: "Hidayahsubuh.id",
+        desc: "Mendirikan dan memimpin komunitas kemanusiaan beranggotakan 130+ orang; menjalankan 20+ program sosial termasuk Qurban, kunjungan panti asuhan, dan distribusi sembako."
+    },
+    {
+        date: "Jul 2023 — Sekarang",
+        title: "Core Protocol Officer",
+        org: "Protokol ITB",
+        desc: "Mengkoordinasi protokoler acara kampus dengan 15.000+ peserta per event (Wisuda, Studium Generale); menjadi liaison utama untuk VIP dan pimpinan universitas."
+    },
+    {
+        date: "Des 2023 — Feb 2025",
+        title: "Operational Coordinator",
+        org: "Character Development Training (CDT) ITB 2024",
+        desc: "Memimpin 50 anggota panitia lapangan untuk program orientasi 5.000 mahasiswa; merancang rundown acara dan menjadi MC utama."
     }
 ];
 
 const projectsData = [
     {
         image: "images/project-1.png",
+        fallback: "images/project-1.svg",
+        title: "DiVolca.Net Volcanology Platform",
+        role: "BRIN · 2025 — Present",
+        description: "Platform web vulkanologi dengan React & GeoDjango, mengintegrasikan multi-source API untuk mendukung sistem peringatan dini dan mitigasi bencana nasional.",
+        tech: ["React", "GeoDjango", "REST API", "Python"]
+    },
+    {
+        image: "images/project-2.png",
+        fallback: "images/project-2.svg",
+        title: "KKP Coastal Geoportal",
+        role: "ITB × KKP · 2024 — 2025",
+        description: "Geoportal interaktif untuk data metocean real-time dari CMEMS dan ECMWF, mendukung perencanaan spasial pesisir pemerintah pusat.",
+        tech: ["GeoDjango", "Leaflet.js", "PostGIS", "CMEMS API"]
+    },
+    {
+        image: "images/project-3.png",
+        fallback: "images/project-3.svg",
         title: "Oceanographic Dynamic Dashboard",
-        role: "WebGIS Developer & IoT Intern",
-        description: "Antarmuka web interaktif dengan pemetaan dinamis, animasi vektor arus laut, dan temporal heatmap Sea Surface Temperature (SST). Terintegrasi CRUD penuh.",
-        tech: ["HTML/CSS/JS", "Python", "Data Viz", "Leaflet.js"]
+        role: "PT. Brajakara · 2024 — 2025",
+        description: "Dashboard oseanografi dengan animasi vektor arus laut dan temporal heatmap Sea Surface Temperature (SST), lengkap dengan operasi CRUD.",
+        tech: ["Python", "JavaScript", "Data Viz", "IoT"]
     },
     {
-        image: "images/project-2.svg",
-        title: "VARUNA WATCH Coastal Sensor",
-        role: "Lead Instrument Engineer",
-        description: "Prototipe sensor pesisir pengukur permukaan laut real-time. Sistem kelistrikan mandiri 100% off-grid berbasis panel surya + baterai untuk web monitoring 24/7.",
-        tech: ["Arduino", "C++", "IoT", "Solar Power"]
+        image: "images/project-4.png",
+        fallback: "images/project-4.svg",
+        title: "Subsurface Mapping — SBP & GPR",
+        role: "PT. Prihaditama · 2026",
+        description: "Pengolahan data Sub-Bottom Profiler dan Ground Penetrating Radar dengan ReflexW; penyusunan 2D utility alignment dan peta subsurface di AutoCAD.",
+        tech: ["ReflexW", "AutoCAD", "Marine Geophysics"]
+    }
+];
+
+const certData = [
+    {
+        badge: "T",
+        title: "TOEFL Preparation",
+        issuer: "EPLC — English Language Proficiency Course",
+        duration: "2 Bulan",
+        year: "2026"
     },
     {
-        image: "images/project-3.svg",
-        title: "Central Kalimantan Geoportal",
-        role: "WebGIS Developer",
-        description: "Geoportal interaktif untuk visualisasi regulasi zonasi pesisir dan data met-ocean (CMEMS). Kalkulasi komponen vektor arus (u1 & u2) yang presisi.",
-        tech: ["HTML/CSS/JS", "GeoDjango", "Leaflet.js", "REST API"]
-    },
-    {
-        image: "images/project-4.svg",
-        title: "Batu Tara Submarine Morphology",
-        role: "Research Assistant",
-        description: "Digital Elevation Model resolusi 20 meter. Kalibrasi data topografi mentah pada ketinggian 748m untuk visualisasi 3D struktur vulkanik bawah laut.",
-        tech: ["Rasterio", "NumPy", "Matplotlib", "Python"]
+        badge: "S",
+        title: "Startup Ecosystem Exposure — SEE 2025 × NUS",
+        issuer: "DKST ITB × National University of Singapore",
+        duration: "1 Minggu",
+        year: "2025"
     }
 ];
 
@@ -83,8 +131,8 @@ const projectsData = [
 
 const renderSkills = () => {
     const container = document.getElementById('skills-container');
-    container.innerHTML = skillsData.map((skill, index) => `
-        <div class="card fade-in" style="transition-delay: ${index * 0.12}s">
+    container.innerHTML = skillsData.map((skill, i) => `
+        <div class="card fade-in" style="transition-delay:${i * 0.1}s">
             <div class="skill-icon">${skill.icon}</div>
             <h3>${skill.category}</h3>
             <p>${skill.desc}</p>
@@ -95,24 +143,24 @@ const renderSkills = () => {
     `).join('');
 };
 
-const renderExperience = () => {
-    const container = document.getElementById('timeline-container');
-    container.innerHTML = experienceData.map((exp, index) => `
-        <div class="timeline-item fade-in" style="transition-delay: ${index * 0.1}s">
-            <div class="timeline-date">${exp.date}</div>
-            <h3 class="timeline-title">${exp.title}</h3>
-            <div class="timeline-org">${exp.org}</div>
-            <p class="timeline-desc">${exp.desc}</p>
+const renderTimeline = (containerId, data) => {
+    const container = document.getElementById(containerId);
+    container.innerHTML = data.map((item, i) => `
+        <div class="timeline-item fade-in" style="transition-delay:${i * 0.08}s">
+            <div class="timeline-date">${item.date}</div>
+            <h3 class="timeline-title">${item.title}</h3>
+            <div class="timeline-org">${item.org}</div>
+            <p class="timeline-desc">${item.desc}</p>
         </div>
     `).join('');
 };
 
 const renderProjects = () => {
     const container = document.getElementById('projects-container');
-    container.innerHTML = projectsData.map((proj, index) => `
-        <div class="card project-card fade-in" style="transition-delay: ${index * 0.15}s">
+    container.innerHTML = projectsData.map((proj, i) => `
+        <div class="card project-card fade-in" style="transition-delay:${i * 0.12}s">
             <div class="project-image">
-                <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+                <img src="${proj.image}" alt="${proj.title}" loading="lazy" onerror="this.onerror=null;this.src='${proj.fallback}'">
             </div>
             <div class="project-body">
                 <div class="project-role">${proj.role}</div>
@@ -126,10 +174,33 @@ const renderProjects = () => {
     `).join('');
 };
 
-// --- 3. ANIMASI ---
+const renderCerts = () => {
+    const container = document.getElementById('cert-container');
+    const cards = certData.map((c, i) => `
+        <div class="cert-card fade-in" style="transition-delay:${i * 0.1}s">
+            <div class="cert-badge">${c.badge}</div>
+            <div class="cert-body">
+                <h3>${c.title}</h3>
+                <div class="cert-issuer">${c.issuer}</div>
+                <div class="cert-meta">
+                    <span>${c.year}</span>
+                    <span>${c.duration}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    const placeholder = `
+        <div class="cert-placeholder fade-in">
+            <strong>+ Ruang untuk sertifikasi berikutnya</strong><br>
+            Tambahkan sertifikat baru di <code>script.js</code> → array <code>certData</code>.
+        </div>
+    `;
+    container.innerHTML = cards + placeholder;
+};
 
-// Typewriter
-const roles = ["WebGIS Developer", "Software Engineer", "Oceanographer", "IoT Enthusiast"];
+// --- 3. INTERAKSI ---
+
+const roles = ["WebGIS Developer", "Backend Engineer", "Oceanography Student", "Marine Data Analyst"];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 
 const typeEffect = () => {
@@ -143,7 +214,7 @@ const typeEffect = () => {
         el.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
     }
-    let typeSpeed = isDeleting ? 30 : 80;
+    let typeSpeed = isDeleting ? 30 : 75;
     if (!isDeleting && charIndex === currentRole.length) {
         typeSpeed = 2200; isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
@@ -154,9 +225,7 @@ const typeEffect = () => {
     setTimeout(typeEffect, typeSpeed);
 };
 
-// Scroll animations
 const setupScrollAnimation = () => {
-    const elements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -165,57 +234,47 @@ const setupScrollAnimation = () => {
             }
         });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    elements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 };
 
-// Stat counter
 const animateStats = () => {
-    const stats = document.querySelectorAll('.stat-num');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             const el = entry.target;
             const target = +el.dataset.target;
-            const suffix = el.dataset.suffix || '';
-            const duration = 1400;
+            const format = el.dataset.format;
+            const duration = 1200;
             const start = performance.now();
             const step = (now) => {
                 const p = Math.min((now - start) / duration, 1);
                 const eased = 1 - Math.pow(1 - p, 3);
-                el.textContent = Math.floor(eased * target) + suffix;
+                const val = eased * target;
+                if (format === 'decimal') {
+                    el.textContent = (val / 100).toFixed(2);
+                } else {
+                    el.textContent = Math.floor(val);
+                }
                 if (p < 1) requestAnimationFrame(step);
-                else el.textContent = target + suffix;
+                else el.textContent = format === 'decimal' ? (target / 100).toFixed(2) : target;
             };
             requestAnimationFrame(step);
             obs.unobserve(el);
         });
     }, { threshold: 0.5 });
-    stats.forEach(s => observer.observe(s));
+    document.querySelectorAll('.stat-num').forEach(s => observer.observe(s));
 };
 
-// Cursor glow
-const setupCursorGlow = () => {
-    const glow = document.querySelector('.cursor-glow');
-    if (!glow) return;
-    window.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-    });
-};
-
-// Scroll progress bar
 const setupScrollProgress = () => {
     const bar = document.getElementById('scrollBar');
     if (!bar) return;
     window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        const percent = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
         bar.style.width = percent + '%';
     });
 };
 
-// Mobile nav toggle
 const setupNavToggle = () => {
     const toggle = document.getElementById('navToggle');
     const links = document.querySelector('.nav-links');
@@ -226,15 +285,34 @@ const setupNavToggle = () => {
     );
 };
 
+const setupExperienceTabs = () => {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const work = document.getElementById('timeline-work');
+    const org = document.getElementById('timeline-org');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const tab = btn.dataset.tab;
+            if (tab === 'work') { work.style.display = 'block'; org.style.display = 'none'; }
+            else { work.style.display = 'none'; org.style.display = 'block'; }
+            org.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            work.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        });
+    });
+};
+
 // --- 4. INIT ---
 document.addEventListener('DOMContentLoaded', () => {
     renderSkills();
-    renderExperience();
+    renderTimeline('timeline-work', workData);
+    renderTimeline('timeline-org', orgData);
     renderProjects();
+    renderCerts();
     typeEffect();
-    setupCursorGlow();
     setupScrollProgress();
     setupNavToggle();
+    setupExperienceTabs();
     setTimeout(() => {
         setupScrollAnimation();
         animateStats();

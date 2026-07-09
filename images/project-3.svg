@@ -1,19 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
     <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#050b14"/>
-      <stop offset="100%" stop-color="#1a3a52"/>
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#eff6ff"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#g3)"/>
-  <g fill="none" stroke="#5bc0be" opacity="0.4">
-    <path d="M 100 100 L 700 100 L 700 400 L 100 400 Z" stroke-width="1"/>
-    <path d="M 100 150 L 700 150 M 100 200 L 700 200 M 100 250 L 700 250 M 100 300 L 700 300 M 100 350 L 700 350" stroke-width="0.5"/>
-    <path d="M 200 100 L 200 400 M 300 100 L 300 400 M 400 100 L 400 400 M 500 100 L 500 400 M 600 100 L 600 400" stroke-width="0.5"/>
+  <g stroke="#1e40af" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M 100 350 Q 200 300 300 320 T 500 300 T 700 280"/>
+    <path d="M 100 380 Q 200 330 300 350 T 500 330 T 700 310"/>
+    <path d="M 100 410 Q 200 360 300 380 T 500 360 T 700 340"/>
   </g>
-  <g fill="#5bc0be">
-    <path d="M 180 180 Q 250 200 320 190 Q 400 180 470 220 Q 550 260 620 240 L 620 350 L 180 350 Z" opacity="0.3"/>
+  <g fill="#ea580c" opacity="0.7">
+    <circle cx="200" cy="150" r="8"/>
+    <circle cx="350" cy="120" r="6"/>
+    <circle cx="500" cy="180" r="7"/>
+    <circle cx="650" cy="140" r="6"/>
   </g>
-  <text x="400" y="260" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">Central Kalimantan Geoportal</text>
-  <text x="400" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#b8c7d6" text-anchor="middle">Ganti file: images/project-3.jpg</text>
+  <path d="M 200 150 L 350 120 L 500 180 L 650 140" stroke="#ea580c" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <text x="400" y="260" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#0f172a" text-anchor="middle">Oceanographic Dashboard</text>
+  <text x="400" y="290" font-family="system-ui, sans-serif" font-size="12" fill="#475569" text-anchor="middle">Ganti file: images/project-3.jpg</text>
 </svg>
