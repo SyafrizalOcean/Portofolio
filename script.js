@@ -96,27 +96,31 @@ const partnersData = [
 const skillsData = [
     {
         icon: "◆",
-        category: "WebGIS Development",
-        desc: "Membangun platform spasial interaktif untuk visualisasi data geografis.",
-        items: ["Python", "GeoDjango", "Leaflet.js", "JavaScript", "React"]
+        type: "hard",
+        category: "WebGIS & Programming",
+        desc: "Pengembangan platform WebGIS, front-end modern, dan integrasi IoT untuk aplikasi spasial interaktif.",
+        items: ["Python", "JavaScript", "React", "GeoDjango", "Leaflet.js", "WEBGIS", "IoT (Arduino)"]
     },
     {
         icon: "▤",
-        category: "Spatial Data & GIS",
-        desc: "Pemrosesan dan analisis data spasial dari berbagai sumber.",
-        items: ["QGIS", "PostGIS", "Rasterio", "NumPy", "Cartopy"]
+        type: "hard",
+        category: "Analysis & Tools",
+        desc: "Komputasi ilmiah, analisis data, dan pengoperasian tool profesional untuk pemetaan & visualisasi.",
+        items: ["Matlab", "Fortran", "Data Analysis", "AutoCAD", "ArcGIS", "QGIS", "Notion", "MS Office"]
+    },
+    {
+        icon: "⬢",
+        type: "soft",
+        category: "Leadership & Management",
+        desc: "Manajemen proyek skala besar, kepemimpinan tim lintas divisi, dan pengelolaan sumber daya manusia.",
+        items: ["Project Management", "Event Management (15.000+)", "Team Leadership (50+)", "Conflict Resolution", "Recruitment", "Performance Appraisal"]
     },
     {
         icon: "⟟",
-        category: "Backend & Database",
-        desc: "Pengembangan REST API dan manajemen database geospasial.",
-        items: ["Django REST", "PostgreSQL", "PostGIS", "SQL"]
-    },
-    {
-        icon: "≋",
-        category: "Marine Data Analysis",
-        desc: "Analisis data oseanografi dan metocean untuk pemodelan.",
-        items: ["Metocean Data", "CMEMS", "ECMWF", "Matplotlib"]
+        type: "soft",
+        category: "Communication",
+        desc: "Komunikasi publik, protokoler high-stakes event, dan koordinasi lintas fungsi dengan stakeholder VIP.",
+        items: ["Public Speaking", "Master of Ceremonies (MC)", "Stakeholder Management", "Cross-Functional Coordination", "Bilingual (ID · EN)"]
     }
 ];
 
@@ -416,9 +420,10 @@ const renderPartners = () => {
 };
 
 const renderSkills = () => {
-    const container = document.getElementById('skills-container');
-    container.innerHTML = skillsData.map((skill, i) => `
-        <div class="card fade-in" style="transition-delay:${i * 0.1}s">
+    const hardContainer = document.getElementById('skills-hard-container');
+    const softContainer = document.getElementById('skills-soft-container');
+    const buildCards = (items, offset = 0) => items.map((skill, i) => `
+        <div class="card skill-card skill-${skill.type} fade-in" style="transition-delay:${(i + offset) * 0.1}s">
             <div class="skill-icon">${skill.icon}</div>
             <h3>${skill.category}</h3>
             <p>${skill.desc}</p>
@@ -427,6 +432,10 @@ const renderSkills = () => {
             </div>
         </div>
     `).join('');
+    const hard = skillsData.filter(s => s.type === 'hard');
+    const soft = skillsData.filter(s => s.type === 'soft');
+    if (hardContainer) hardContainer.innerHTML = buildCards(hard);
+    if (softContainer) softContainer.innerHTML = buildCards(soft, hard.length);
 };
 
 const renderTimeline = (containerId, data) => {
