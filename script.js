@@ -435,7 +435,7 @@ const renderCerts = () => {
 
 // --- 3. INTERAKSI ---
 
-const roles = ["WebGIS Developer", "Front-end Developer", "Oceanographer", "Marine Data Analyst"];
+const roles = ["Software Engineer", "Oceanographer", "Instrumentation Engineer"];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 
 const typeEffect = () => {
