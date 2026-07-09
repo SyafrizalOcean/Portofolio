@@ -237,6 +237,17 @@ section { scroll-margin-top: 90px; position: relative; }
     background: linear-gradient(160deg, var(--blue-tint) 0%, #ffffff 50%, var(--primary-tint) 100%);
 }
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-frame .hero-photo-img {
+    position: absolute; inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(1.02);
+}
+.photo-frame .hero-photo-img.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
 .photo-accent-shape {
     position: absolute; z-index: 1;
     width: 340px; height: 420px; border-radius: 14px;

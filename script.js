@@ -438,6 +438,12 @@ const renderCerts = () => {
 const roles = ["Software Engineer", "Oceanographer", "Instrumentation Engineer"];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 
+const swapHeroPhoto = (index) => {
+    document.querySelectorAll('.hero-photo-img').forEach((img) => {
+        img.classList.toggle('active', +img.dataset.roleIndex === index);
+    });
+};
+
 const typeEffect = () => {
     const el = document.getElementById('typewriter');
     if (!el) return;
@@ -455,6 +461,7 @@ const typeEffect = () => {
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
+        swapHeroPhoto(roleIndex);
         typeSpeed = 400;
     }
     setTimeout(typeEffect, typeSpeed);
